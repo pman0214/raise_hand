@@ -1,0 +1,19 @@
+@charset "utf-8";
+p {
+    text-align: justify;
+    text-justify: inter-ideograph;
+    -ms-text-justify: inter-ideograph;
+}
+.main {
+    padding: 0pt;
+    margin: 0pt;
+}
+.content {
+    margin: 2em;
+}
+.hide {
+    display: none;
+}
+#raise_button {
+    width: 100%;
+}

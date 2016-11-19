@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="IE=11">
+  <meta name="author" content="Shigemi Ishida">
+  <meta name="copyright" content="(c) 2016 Shigemi Ishida">
+  <title>Raise Your Hand</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/pure-min.css">
+  <link rel="stylesheet" href="css/my.css">
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="css/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="css/grids-responsive-min.css">
+  <!--<![endif]-->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+  <![endif]-->
+  <!--<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>-->
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+</head>
+<body>
+<div class="main">
+  <div class="content">
+    <div id="msg_title"></div>
+    <div id="msg_body"></div>
+  </div>
+  <div class="content hide" id="request_perm">
+    <h1>Needs permission</h1>
+    <button class="pure-button pure-button-primary">Request Permission</button>
+  </div>
+</div>
+</body>
+<script src="js/raised.js"></script>
+</html>
