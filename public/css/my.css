@@ -17,3 +17,7 @@ p {
 #raise_button {
     width: 100%;
 }
+.button_text {
+    margin: 0pt;
+    padding: 0pt;
+}

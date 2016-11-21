@@ -32,10 +32,11 @@ $( function() {
 
     resizeButton();
     function resizeButton() {
-        $("#raise_button").height($(window).height() * 0.5);
+        $("#raise_button").height($(window).height() * 0.7);
     }
     $(window).resize(resizeButton);
-    $("#raise_button").flowtype({fontRatio: 5}).click(function() {
+    $("div.button_text").flowtype({fontRatio: 5});
+    $("#raise_button").click(function() {
         $("#raise_button").addClass("pure-button-pressed");
         $("#raise_button").addClass("pure-button-disabled");
         $("#msg_title").html("<h1>質問要求送信中</h1>");
