@@ -36,6 +36,38 @@ $( function() {
     }
     $(window).resize(resizeButton);
     $("div.button_text").flowtype({fontRatio: 5});
+
+    time_check = checkTimeSchedule("../time_schedule.json");
+    if (! time_check ) {
+        $("#raise_button").addClass("pure-button-disabled");
+        $("#msg_title").html("<h1>使用不可</h1>");
+        $("#msg_body").html("<p>ただいまの時間帯は使用できません</p>")
+        return;
+    }
+    function checkTimeSchedule(json_file) {
+        var ret = false;
+        $.ajaxSetup({ async: false });
+        $.getJSON(json_file, function(data) {
+            // 現在日時を取得
+            var now = new Date();
+            console.log("Time check");
+            for (var i=0; i < data.length; i++) {
+                var start = new Date(data[i]["start"]);
+                var end = new Date(data[i]["end"]);
+                if ( (now >= start) &&
+                     (now <= end ) ) {
+                    console.log("Time is ok");
+                    ret = true;
+                }
+            }
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus + ": " + jqXHR.responseText);
+        });
+        $.ajaxSetup({ async: true });
+        return ret;
+    }
+
     $("#raise_button").click(function() {
         $("#raise_button").addClass("pure-button-pressed");
         $("#raise_button").addClass("pure-button-disabled");
