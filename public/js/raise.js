@@ -32,7 +32,7 @@ $( function() {
 
     resizeButton();
     function resizeButton() {
-        $("#raise_button").height($(window).height() * 0.7);
+        $("#raise_button").height($(window).height() * 0.5);
     }
     $(window).resize(resizeButton);
     $("div.button_text").flowtype({fontRatio: 5});
